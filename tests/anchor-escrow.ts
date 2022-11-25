@@ -8,7 +8,8 @@ import { assert } from "chai";
 
 describe('anchor-escrow', () => {
   const commitment: Commitment = 'processed';
-  const connection = new Connection('https://rpc-mainnet-fork.dappio.xyz', { commitment, wsEndpoint: 'wss://rpc-mainnet-fork.dappio.xyz/ws' });
+  const connection = new Connection('http://127.0.0.1:8899', { commitment/* ,
+   wsEndpoint: 'wss://rpc-mainnet-fork.dappio.xyz/ws' */ });
   const options = anchor.Provider.defaultOptions();
   const wallet = NodeWallet.local();
   const provider = new anchor.Provider(connection, wallet, options);
